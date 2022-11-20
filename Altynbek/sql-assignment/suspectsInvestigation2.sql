@@ -1,6 +1,6 @@
 CREATE PROCEDURE solution()
 BEGIN
-    SELECT id, name, surname 
+  SELECT id, name, surname 
   FROM Suspect 
   WHERE height <= 170 
   OR name not LIKE'B%' 
