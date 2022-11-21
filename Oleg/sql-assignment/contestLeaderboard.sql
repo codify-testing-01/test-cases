@@ -1,4 +1,4 @@
-CREATE PROCEDURE contestLeaderboard()
+CREATE PROCEDURE solution()
 BEGIN
 	SELECT name FROM leaderboard 
 	ORDER By score DESC 
