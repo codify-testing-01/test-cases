@@ -1,4 +1,4 @@
-CREATE PROCEDURE suspectsInvestigation2()
+CREATE PROCEDURE solution()
 BEGIN
 	SELECT id, name, surname
     FROM Suspect
