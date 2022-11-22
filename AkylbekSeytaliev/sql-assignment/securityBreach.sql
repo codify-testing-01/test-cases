@@ -4,7 +4,7 @@ SELECT
 FROM
     users
 WHERE
-    attribute REGEXP concat('.+%', first_name, '_', second_name, '%.*')
+    attribute like binary concat('%_\%%', first_name, '\_', second_name, '%\%%')
 ORDER BY
     attribute;
 
