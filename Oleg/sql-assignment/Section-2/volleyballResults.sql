@@ -1,5 +1,4 @@
 CREATE PROCEDURE solution()
 BEGIN
-	SELECT * FROM results 
-	ORDER BY wins ASC;
+SELECT * FROM results ORDER BY wins ASC;
 END
