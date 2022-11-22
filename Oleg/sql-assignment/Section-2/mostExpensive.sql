@@ -1,4 +1,4 @@
-CREATE PROCEDURE mostExpensive()
+CREATE PROCEDURE solution()
 BEGIN
 	SELECT name FROM Products 
 	ORDER BY price*quantity DESC, name 

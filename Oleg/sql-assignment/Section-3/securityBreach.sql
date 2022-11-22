@@ -1,4 +1,4 @@
-CREATE PROCEDURE securityBreach()
+CREATE PROCEDURE solution()
 BEGIN
 SELECT first_name, second_name, attribute
 FROM users

@@ -1,4 +1,4 @@
-CREATE PROCEDURE itemCounts()
+CREATE PROCEDURE solution()
 BEGIN
     SELECT item_name, item_type, count(*) as item_count
     FROM availableItems

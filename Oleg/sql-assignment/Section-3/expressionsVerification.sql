@@ -1,5 +1,5 @@
 
-CREATE PROCEDURE expressionsVerification()
+CREATE PROCEDURE solution()
 BEGIN
     SELECT *
     FROM expressions

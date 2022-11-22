@@ -1,4 +1,4 @@
-CREATE PROCEDURE automaticNotifications()
+CREATE PROCEDURE solution()
     SELECT email
     FROM users
     WHERE role NOT IN ("admin", "premium")

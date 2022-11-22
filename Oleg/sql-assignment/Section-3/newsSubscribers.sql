@@ -1,4 +1,4 @@
-CREATE PROCEDURE newsSubscribers()
+CREATE PROCEDURE solution()
 BEGIN
     SELECT subscriber
     FROM full_year
