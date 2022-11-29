@@ -1,7 +1,7 @@
 CREATE PROCEDURE solution()
 BEGIN
-	SELECT id, name, surname
-	FROM Suspect
-	Where height <= 170 or lower(name) NOT LIKE 'B%' or lower(surname) NOT LIKE 'Gre_n'
-	ORDER BY Id;
+SELECT id, name, surname
+FROM Suspect
+WHERE height <= 170 or LOWER(name) NOT LIKE 'B%' or LOWER(surname) NOT LIKE 'Gre_n'
+ORDER BY Id;
 END
