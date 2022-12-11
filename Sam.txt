@@ -49,7 +49,7 @@ Actual result: Status 200 OK
 
 
 Test case description: Negative "POST"
-Precondition: Postman/Case ID - 1;
+Precondition: Postman/Case TPS ID - 1;
 
 Test steps:
 1. Duplicate case ID-1;
@@ -87,7 +87,7 @@ Actual result: Status 200 OK
 
 
 Test case description: Negative test case "GET"
-Precondition: Postman/Case ID - 3;
+Precondition: Postman/Case TPS ID - 3;
 
 Test steps:
 1. Duplicate case ID-3;
@@ -133,7 +133,7 @@ Precondition: Postman/Case ID - 5;
 
 Test steps:
 
-1. Duplicate case ID-5;
+1. Duplicate case TPS ID-5;
 
 2. Change the number after /order/ from "2" to "10";
 
@@ -177,7 +177,7 @@ Actual result: Status 200 OK
 
 
 Test case description: Negative test case "GET"
-Precondition: Postman/Case ID - 7;
+Precondition: Postman/Case TPS ID - 7;
 
 
 Test steps:
