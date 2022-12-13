@@ -1,0 +1,228 @@
+TEST CASE API
+URL: https://petstore.swagger.io/
+
+
+Test scenario: successful new order 
+ID - 1
+Test case description: Positive test case "POST"
+Pre-Condition: need Postman
+
+Test steps:
+1. Input correct URL in postman: https://petstore.swagger.io/v2/store/order
+2. Select "POST" hhtp methods from dropdown menu 
+3. Input in body:(
+    {
+  "id": 0,
+  "petId": 0,
+  "quantity": 0,
+  "shipDate": "2022-12-09T13:29:29.009Z",
+  "status": "placed",
+  "complete": true
+}
+)
+4. Select "Raw"
+5. Select "JSON" from formats dropdown menu
+6. Click "Send" button
+
+Expected result:  
+    "id": 9223372036854775807,
+    "petId": 0,
+    "quantity": 0,
+    "shipDate": "2022-12-09T13:29:29.009+0000",
+    "status": "placed",
+    "complete": true
+    Status 200 OK
+Actual result: "id": 9223372036854775807,
+    "petId": 0,
+    "quantity": 0,
+    "shipDate": "2022-12-09T13:29:29.009+0000",
+    "status": "placed",
+    "complete": true
+    Status 200 OK
+
+
+Test scenario: unsuccessful new order 
+ID - 2
+Test case description: Negative test case "POST"
+Pre-Condition: need Postman
+
+Test steps:
+1. Copy URL and input in Postman: https://petstore.swagger.io/v2/store/order
+2. Select "POST" hhtp methods from dropdown menu 
+3. Input in body:(
+    {
+  "id": 5g,
+  "petId": 55646,
+  "quantity": 4,
+  "shipDate": "2022-12-09T13:29:29.009Z",
+  "status": "placed",
+  "complete": true
+}
+)
+4. Select "Raw"
+5. Select "JSON" from formats dropdown menu
+6. Click "Send" button
+
+ Expected result: 
+    "code": 400,
+    "type": "unknown",
+    "message": "bad input"
+    Status 400 bad request
+Actual result: 
+    Expected result: 
+    "code": 400,
+    "type": "unknown",
+    "message": "bad input"
+    Status 400 bad request
+    
+
+Test scenario: successful getting request by id
+ID - 3
+Test case description: Positive test case "GET"
+Pre-Condition: need Postman
+
+Test steps:
+1. Input URL in postman: https://petstore.swagger.io/v2/store/order/10
+2. Send GET request 
+
+Expected result: 
+    "id": 10,
+    "petId": 10,
+    "quantity": 10,
+    "shipDate": "2022-12-13T08:06:41.196+0000",
+    "status": "placed",
+    "complete": true
+    Status 200 OK
+Actual result: 
+    "id": 10,
+    "petId": 10,
+    "quantity": 10,
+    "shipDate": "2022-12-13T08:06:41.196+0000",
+    "status": "placed",
+    "complete": true
+    Status 200 OK
+
+
+Test scenario: usuccessful getting request by id
+ID - 4
+Test case description: Negative test case "GET"
+Pre-Condition: need Postman
+
+Test steps:
+1. Input URL in postman: https://petstore.swagger.io/v2/store/order/1
+2. Send GET request
+Expected result: 
+    "code": 1,
+    "type": "error",
+    "message": "Order not found"
+    Status 404 not found
+Actual result: 
+    "code": 1,
+    "type": "error",
+    "message": "Order not found"
+    Status 404 not found
+
+
+Test scenario: successful delete order
+ID - 5
+Test case description: Positive test case "DELETE"
+Pre-Condition: need Postman
+
+Test steps:
+1. Input correct URL in postman: https://petstore.swagger.io/v2/store/order/10
+2. Select "DELETE" hhtp methods from dropdown menu 
+3. Click "Send" button
+
+Expected result:
+    "code": 200,
+    "type": "unknown",
+    "message": "10"
+    Status 200 OK
+Actual result: 
+    "code": 200,
+    "type": "unknown",
+    "message": "10"
+    Status 200 OK
+
+
+Test scenario: unsuccessful delete order
+ID - 6
+Test case description: Negative test case "DELETE"
+Pre-Condition: need Postman
+
+Test steps:
+1. Input correct URL in postman: https://petstore.swagger.io/v2/store/order/1
+2. Select "DELETE" hhtp methods from dropdown menu 
+3. Click "Send" button
+
+Expected result: 
+    "code": 404,
+    "type": "unknown",
+    "message": "Order Not Found"
+    Status 404 not found
+Actual result:
+    "code": 404,
+    "type": "unknown",
+    "message": "Order Not Found"
+    Status 404 not found
+
+
+Test scenario: successful getting all inventory from store
+ID - 7
+Test case description: Positive test case "GET"
+Pre-Condition: need Postman
+
+Test steps:
+1. Input correct URL in postman: https://petstore.swagger.io/v2/store/inventory
+2. Select "GET" hhtp methods from dropdown menu 
+3. Click "Send" button
+
+Expected result:
+    "sold": 9,
+    "placed": 1,
+    "string": 517,
+    "unavailable": 4,
+    "pending": 5,
+    "available": 434,
+    "not available": 1,
+    "hello": 1,
+    "peric": 8,
+    "shot": 1
+    Status 200 OK
+Actual result:
+    "sold": 9,
+    "placed": 1,
+    "string": 517,
+    "unavailable": 4,
+    "pending": 5,
+    "available": 434,
+    "not available": 1,
+    "hello": 1,
+    "peric": 8,
+    "shot": 1
+    Status 200 OK
+
+
+Test scenario: unsuccessful getting all inventory from store
+ID - 8
+Test case description: Negative test case "GET"
+Pre-Condition: need Postman
+
+Test steps:
+1. Input incorrect URL in postman: https://petstore.swagger.io/v2/store/inventory1
+2. Select "GET" hhtp methods from dropdown menu 
+3. Click "Send" button
+
+Expected result:
+    "code": 404,
+    "type": "unknown",
+    "message": "null for uri: http://petstore.swagger.io/v2/store/inventory1"
+}
+    Status 404 not found
+Actual result: 
+    "code": 404,
+    "type": "unknown",
+    "message": "null for uri: http://petstore.swagger.io/v2/store/inventory1"
+}
+    Status 404 not found
+
