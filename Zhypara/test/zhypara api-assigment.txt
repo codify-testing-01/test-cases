@@ -1,0 +1,17 @@
+Положительный ответ
+1. Если создаем API-4 в Find purchase order by ID
+2.То получаем ответ {
+  "id": 4,
+  "petId": 0,
+  "quantity": 0,
+  "status": "available",
+  "complete": false
+}
+
+Отрицательный ответ
+1. Если создаем API-3 в Delete purchase order by ID
+2. То получаем ответ {
+  "code": 404,
+  "type": "unknown",
+  "message": "Order Not Found"
+}
