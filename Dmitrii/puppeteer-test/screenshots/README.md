@@ -1,0 +1,1 @@
+This is screenshots folder, don't push any images from this folder to git
