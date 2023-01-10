@@ -1,6 +1,10 @@
 {
-  "name": "Dmitrii",
+  "name": "demo-puppeteer",
   "version": "1.0.0",
+  "author": "Dmitrii Pokhilenko",
+  "scripts": {
+    "test": "node e2e/example-screenshot.js && node e2e/test.js"
+  },
   "dependencies": {
     "puppeteer": "^19.5.0",
     "puppeteer-core": "^19.5.0"
