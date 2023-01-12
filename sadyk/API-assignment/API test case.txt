@@ -214,13 +214,15 @@ Test steps:
 3. Click "Send" button
 
 Expected result:
+    {
     "code": 404,
     "type": "unknown",
     "message": "null for uri: http://petstore.swagger.io/v2/store/inventory1"
 }
     Status 404 not found
 Actual result: 
-    "code": 404,
+  {
+  "code": 404,
     "type": "unknown",
     "message": "null for uri: http://petstore.swagger.io/v2/store/inventory1"
 }
