@@ -1,2 +1,5 @@
 .DS_Store
 /node_modules
+/screenshots/*.png
+/screenshots/*.jpeg
+/screenshots/*.jpg
