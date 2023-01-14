@@ -1,0 +1,193 @@
+----------------TEST CASE API----------------
+        https://petstore.swagger.io/
+
+Last Updated 12/12/2022;
+Last Saved by: Sam;
+
+Version of: 
+
+-Postman v10.5.6
+
+-DB Swagger Petstore 1.0.6
+
+
+
+----------------POST/ORDER-------------
+
+
+            TPS ID - 1
+
+
+Description: Positive "POST"
+Precondition: Postman/cURL
+
+Test steps:
+
+1. Create new request via CURL: 
+
+        curl -X 'POST' \
+          'https://petstore.swagger.io/v2/store/order' \
+          -H 'accept: application/json' \
+          -H 'Content-Type: application/json' \
+          -d '{
+          "id": 0,
+          "petId": 0,
+          "quantity": 0,
+          "shipDate": "2022-12-11T16:51:10.918Z",
+          "status": "placed",
+          "complete": true
+        }'
+
+2. Click "Send" button
+
+Expected result: Status 200 OK
+Actual result: Status 200 OK
+
+
+
+            TPS ID - 2
+
+
+Test case description: Negative "POST"
+Precondition: Postman/Case TPS ID - 1;
+
+Test steps:
+1. Duplicate case ID-1;
+2. Change ID in body from "1" to "9223372036854776000";
+3. Click "Send" button;
+
+Expected result: Status 404 not found
+Actual result: Status 500 Server Error
+
+
+
+----------------GET/ORDER---------------
+
+
+
+            TPS ID - 3
+
+
+Test case description: Positive test case "GET"
+Precondition: Postman/cURL
+
+Test steps:
+1. Create new request via CURL: 
+        curl -X 'GET' \
+          'https://petstore.swagger.io/v2/store/order/1' \
+          -H 'accept: application/json'
+2. Click "Send" button
+
+Expected result: Status 200 OK
+Actual result: Status 200 OK
+
+
+
+            TPS ID - 4
+
+
+Test case description: Negative test case "GET"
+Precondition: Postman/Case TPS ID - 3;
+
+Test steps:
+1. Duplicate case ID-3;
+2. Change the number after /order/ from "1" to "10";
+3. Click "Send" button;
+
+Expected result: Status 200 OK
+Actual result: Status 404 Server Error
+
+
+
+----------------DELETE--------------------
+
+
+
+            TPS ID - 5
+
+
+Test case description: Positive test case "DELETE"
+Precondition: Postman/cURL
+
+Test steps:
+
+1. Create new request via CURL:
+
+        curl -X 'DELETE' \
+          'https://petstore.swagger.io/v2/store/order/2' \
+          -H 'accept: application/json'
+
+
+2. Click "Send" button
+
+Expected result: Status 200 OK
+Actual result: Status 200 OK
+
+
+
+            TPS ID - 6
+
+
+Test case description: Negative test case "DELETE"
+Precondition: Postman/Case ID - 5;
+
+Test steps:
+
+1. Duplicate case TPS ID-5;
+
+2. Change the number after /order/ from "2" to "10";
+
+3. Click "Send" button;
+
+Expected result: Status 200 OK
+Actual result: Status 404 Server Error
+
+
+
+
+----------------GET/Inventory-----------------
+
+
+
+            TPS ID - 7
+
+
+Test case description: Positive test case "GET"
+Precondition: Postman/cURL
+
+
+Test steps:
+
+1. Create new request via CURL:
+
+        curl -X 'GET' \
+          'https://petstore.swagger.io/v2/store/inventory' \
+          -H 'accept: application/json'
+
+
+2. Click "Send" button
+
+Expected result: Status 200 OK
+Actual result: Status 200 OK
+
+
+
+
+            TPS ID - 8
+
+
+Test case description: Negative test case "GET"
+Precondition: Postman/Case TPS ID - 7;
+
+
+Test steps:
+
+1. Duplicate case ID-7;
+
+2. Add 2 any keys with any values;
+
+3. Click "Send" button;
+
+Expected result: Status 200 OK
+Actual result: Status 200 OK
+
