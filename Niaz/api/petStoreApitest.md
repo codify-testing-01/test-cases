@@ -86,7 +86,7 @@ Steps:
 Send DELETE request in Postman to the endpoint in pre-condition 1.
 go to Query Params
 enter "order" in KEY
-enter "0" in VALUE
+enter "23" in VALUE
 Expected result:
 
 body response: { "code": 200, "type": "unknown", "message": "23" } response: 200
@@ -96,13 +96,21 @@ Actual result:
 response body: { "code": 200, "type": "unknown", "message": "23" } response: 200
 
 Scenario 6: delete order which doesn't exist
-Pre-condition:
+Pre-condition 1: 
 
-URL https://petstore.swagger.io/v2/store/order/{order_id} available
+URL https://petstore.swagger.io/v2/store/order/{order_id} is working
 order_id = 23
-Steps:
 
-Send DELETE request in Postman to the endpoint in pre-condition 1.
+
+Step 1:
+
+Send POST request in Postman with id 23 in pre-condition 1.
+
+Step 2:
+Send DELETE request in Postman with id 23 in pre-condition 1.
+
+Step 3:
+Send DELETE request in Postman with id 23 in pre-condition 1.
 Expected result:
 
 body response: { "code": 404, "type": "unknown", "message": "Order Not Found" } response: 404
