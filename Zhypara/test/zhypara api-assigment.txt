@@ -1,0 +1,88 @@
+Название Доступ к заказам в зоомагазине
+
+GET 
+Сценарий : получение заказа по id
+Пред условия
+Зайти на сайт: https://petstore.swagger.io/v2/store/order/5
+order_id = 5
+
+Шаги:
+1. В Postman  делаем запрос на URL из пред условий (1),
+где order_id из предусловий(2)
+
+Ожидаемый резултат;
+код ответа:200
+тело ответа
+{
+  "id": 5,
+  "petId": 5,
+  "quantity": 3,
+  "shipDate": "2022-12-13T07:36:26.695+0000",
+  "status": "placed",
+  "complete": true
+}
+
+GET 
+Сценарий : получение заказа по id
+Пред условия
+Зайти на сайт:https://petstore.swagger.io/v2/store/order/5 
+order_id = 5
+
+Шаги:
+1. В Postman  делаем запрос на URL из пред условий (1),
+где order_id из предусловий(2)
+ 
+Ожидаемый результат;
+Код ответа: 404
+тело ответа:
+
+{
+    "code": 404,
+    "type": "unknown",
+    "message": "java.lang.NumberFormatException: For input string: \"5 \""
+}
+
+GET 
+Сценарий : получение заказа по id
+Пред условия
+Зайти на сайт:https://petstore.swagger.io/v2/store/order/5
+
+Шаги:
+1. В Postman  делаем запрос на URL из пред условий (1),
+где order_id из предусловий(2)
+
+orderId = 5
+
+Ожидаемый результат;
+Код ответа: 200
+тело ответа:
+
+{
+  "code": 200,
+  "type": "unknown",
+  "message": "5"
+}
+
+GET
+
+Сценарий : получение заказа по id
+Пред условия
+Зайти на сайт:https://petstore.swagger.io/v2/store/orderId
+orderId = 125
+
+Шаги:
+1. В Postman  делаем запрос на URL из пред условий (1),
+где order_id из предусловий(2)
+
+Ожидаемый результат;
+Код ответа: 200
+тело ответа:
+
+{
+  "id": 9223372036854776000,
+  "petId": 0,
+  "quantity": 125,
+  "shipDate": "2022-12-14T17:28:51.772+0000",
+  "status": "placed",
+  "complete": true
+}
