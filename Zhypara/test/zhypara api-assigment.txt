@@ -22,18 +22,15 @@ order_id = 5
   "complete": true
 }
 
-
-
 GET 
 Сценарий : получение заказа по id
 Пред условия
 Зайти на сайт:https://petstore.swagger.io/v2/store/order/5 
+order_id = 5
 
 Шаги:
 1. В Postman  делаем запрос на URL из пред условий (1),
 где order_id из предусловий(2)
-
-OrderId = 5
  
 Ожидаемый результат;
 Код ответа: 404
@@ -45,9 +42,6 @@ OrderId = 5
     "message": "java.lang.NumberFormatException: For input string: \"5 \""
 }
 
-
-
- 
 GET 
 Сценарий : получение заказа по id
 Пред условия
@@ -69,19 +63,16 @@ orderId = 5
   "message": "5"
 }
 
-
-POST
+GET
 
 Сценарий : получение заказа по id
 Пред условия
-Зайти на сайт:https://petstore.swagger.io/v2/store/order
-
+Зайти на сайт:https://petstore.swagger.io/v2/store/orderId
 orderId = 125
 
 Шаги:
 1. В Postman  делаем запрос на URL из пред условий (1),
 где order_id из предусловий(2)
-
 
 Ожидаемый результат;
 Код ответа: 200
@@ -95,6 +86,3 @@ orderId = 125
   "status": "placed",
   "complete": true
 }
-
-
-
