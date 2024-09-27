@@ -1,0 +1,134 @@
+Project name: Test case API
+
+        Scenario 1:Успешное получение заказа по ID
+Приоритет:Highest
+1.Отправить запрос GET на URL https://petstore.swagger.io/v2/store/order/2, используя Postman
+    Ожидаемый результат :{
+    "id": 2,
+    "petId": 0,
+    "quantity": 0,
+    "shipDate": "2022-02-23T09:46:48.746+0000",
+    "status": "placed",
+    "complete": false
+}
+статус 200
+    Фактический результат:{
+    "id": 2,
+    "petId": 0,
+    "quantity": 0,
+    "shipDate": "2022-02-23T09:46:48.746+0000",
+    "status": "placed",
+    "complete": false
+}
+статус 200
+
+        Scenario 2:Запрос по несуществующему ID
+Приоритет:Highest
+1.Отправить запрос GET на URL https://petstore.swagger.io/v2/store/order/1, используя Postman
+    Ожидаемый результат: 
+Заказ не найден
+статус 404
+    Фактический результат:  {
+    "code": 1,
+    "type": "error",
+    "message": "Order not found"
+}
+статус 404
+
+        Scenario 3:Успешное получение всего списка параметров магазинов
+Приоритет:Highest
+1.Зайти по ссылке https://petstore.swagger.io/
+2.Скопировать URL https://petstore.swagger.io/v2/store/inventory
+3.Отправить запрос GET на URL из шага 2, используя Postman
+    Ожидаемый результат: отвечает количеством всех параметров магазина,Статус 200
+    Фактический результат:отвечает количеством всех параметров магазина,Статус 200
+
+        Scenario 4:Ошибка при получении всего списка параметра магазинов
+Приоритет:Highest
+1.Зайти по ссылке https://petstore.swagger.io/
+2.Скопировать URL https://petstore.swagger.io/v2/store/inventory?available
+3.Отправить запрос GET на URL из шага 2, используя Postman
+    Ожидаемый результат:отвечает количеством свободных животных,статус 200 
+    Фактический результат:отвечает количеством всех параметров магазина,статус 200
+
+        Scenario 5:Успешное размещение на покупку
+Приоритет:Highest
+1.Отправить запрос POST на URL https://petstore.swagger.io/v2/store/order/, используя Postman
+2.Вставить в body {
+  "id": 2,
+  "petId": 0,
+  "quantity": 0,
+  "shipDate": "2022-12-10T13:13:51.378Z",
+  "status": "placed",
+  "complete": true
+}
+    Ожидаемый результат:заказ на покупку размещен,статус 200
+    Фактический результат:
+{
+    "id": 2,
+    "petId": 0,
+    "quantity": 0,
+    "shipDate": "2022-12-14T11:21:11.930+0000",
+    "status": "placed",
+    "complete": true
+}
+статус 200
+
+        Scenario 6:Неуспешное размещение заказа
+Приоритет:Highest
+1.Отправить запрос POST на URL https://petstore.swagger.io/v2/store/order/, используя Postman
+2.Вставить в body {
+  "id": 3a,
+  "petId": 0,
+  "quantity": 0,
+  "shipDate": "2022-12-10T13:13:51.378Z",
+  "status": "placed",
+  "complete": true
+}
+    Ожидаемый результат:заказ на покупку не размещен,статус 400
+    Фактический результат:
+{
+    "code": 400,
+    "type": "unknown",
+    "message": "bad input"
+}
+статус 400
+
+        Scenario 7:Проверка уникальности размещения заказа на сайте
+Приоритет:High
+1.Отправить запрос POST на URL https://petstore.swagger.io/v2/store/order/, используя Postman
+2.Вставить в body {
+  "id": 0,
+  "petId": 0,
+  "quantity": 0,
+  "shipDate": "2022-12-10T13:13:51.378Z",
+  "status": "placed",
+  "complete": true
+}
+3.Повторить пункты 1 и 2
+    Ожидаемый результат:Выдача ошибки,невозможность размещения одного и того же заказа
+    Фактический результат:Заказ размещен заново.
+
+        Scenario 8:Успешное удаление заказа
+Приоритет:Highest
+1.Отправить запрос DELETE на URL https://petstore.swagger.io/v2/store/order/2, используя Postman
+    Ожидаемый результат: заказ удален,статус 200
+    Фактический результат:
+{
+  "code": 200,
+  "type": "unknown",
+  "message": "2"
+}
+статус 200
+
+        Scenario 9:Неуспешное удаление заказа
+Приоритет:Highest
+1.Отправить запрос DELETE на URL https://petstore.swagger.io/v2/store/order/31, используя Postman
+    Ожидаемый результат: заказ не удален,статус 404
+    Фактический результат:
+{
+    "code": 404,
+    "type": "unknown",
+    "message": "Order Not Found"
+}
+статус 404
